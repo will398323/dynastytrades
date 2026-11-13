@@ -1,0 +1,11 @@
+{
+  "name": "sleeper-trade-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-data": "node scripts/build-data.mjs",
+    "serve": "node scripts/serve.mjs",
+    "dev": "node scripts/build-data.mjs && node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Tracker</title>
+  <meta name="description" content="Every trade in the league, with traded draft picks resolved to the actual pick and player, graded three ways.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="#/trades">
+        <img id="league-avatar" alt="" hidden>
+        <div>
+          <div class="brand-name" id="league-name">Trade Tracker</div>
+          <div class="brand-sub" id="league-sub">Loading…</div>
+        </div>
+      </a>
+      <div class="metric-wrap">
+        <div class="seg" id="metric" role="tablist" aria-label="Grading metric">
+          <button data-m="production" title="Points per game above replacement, for the team that received the asset">Production</button>
+          <button data-m="value" title="What the assets are worth today (FantasyCalc dynasty values)">Dynasty Value</button>
+          <button data-m="blended" title="A mix of both">Blended</button>
+        </div>
+        <label class="weight" id="weight-wrap" hidden>
+          <span>Prod <b id="weight-label">50%</b></span>
+          <input type="range" id="weight" min="0" max="100" step="5" value="50" aria-label="Production weight in blended grade">
+          <span>Value</span>
+        </label>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a href="#/trades" data-tab="trades">Trades</a>
+      <a href="#/awards" data-tab="awards">Awards</a>
+      <a href="#/managers" data-tab="managers">Report Cards</a>
+      <a href="#/anniversaries" data-tab="anniversaries">Anniversaries</a>
+      <a href="#/how" data-tab="how">How grading works</a>
+    </nav>
+  </header>
+  <main id="app"><div class="loading">Loading league data…</div></main>
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-x" id="modal-x" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <footer class="foot" id="foot"></footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
